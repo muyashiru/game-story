@@ -61,13 +61,339 @@ def tampilkan_status():
         print(f"📦 Inventory: {', '.join(player.inventory)}")
     print("="*50)
 
+def tampilkan_ascii_judul():
+    """ASCII art judul game"""
+    art = """
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║     ▄▀█ █▀ █▄█ █░░ █░█ █▀▄▀█   █▄░█ █ █▀▀ █░█ ▀█▀ █▀▄▀█ ▄▀█ █▀█ █▀▀  ║
+║     █▀█ ▄█ ░█░ █▄▄ █▄█ █░▀░█   █░▀█ █ █▄█ █▀█ ░█░ █░▀░█ █▀█ █▀▄ ██▄  ║
+║                                                                      ║
+║            ⚰️  THE BLACKWOOD PSYCHIATRIC HOSPITAL  ⚰️                ║
+║                  ~ Advanced Horror Experience ~                      ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+    """
+    print(art)
+    time.sleep(1)
+
+def tampilkan_ascii_gedung():
+    """ASCII art gedung rumah sakit"""
+    art = """
+                                  ___
+                              .-'   `'.
+                             /         \\
+                             |         ;
+                             |         |           ___.--,
+                    _.._     |0) ~ (0) |    _.---'`__.-( (_.
+             __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
+            ( ,.--'`   ',__ /./;   ;, '.__.'
+            _`) )  .---.__.' / |   |\   \\
+           `---' .'.''-._.-'`_./  /\ '.  \\
+                 | |  .' _.-' |  |  \  \  \\
+                  \ \/ .'     \  \   '. '-._)
+                   \/ /        \  \    `=.__`'-.
+                   / /\         `) )    / / `"".\\
+             , _.-'.'\ \        / /    ( (     / /
+              `--'`   ) )    .-'.'      '.'.  | (
+                     (/`    ( (`          ) )  '-;
+                      `      '-;         (-'
+
+        ═══════════════════════════════════════════════
+           BLACKWOOD ASYLUM - Abandoned Since 1963
+        ═══════════════════════════════════════════════
+    """
+    print(art)
+    time.sleep(1)
+
+def tampilkan_ascii_pintu():
+    """ASCII art pintu masuk"""
+    art = """
+                    ___________________________
+                   |  ___________________  |
+                   | |                   | |
+                   | |   RESTRICTED      | |
+                   | |                   | |
+                   | |   DO NOT ENTER    | |
+                   | |                   | |
+                   | |___________________| |
+                   |  ___________________  |
+                   | |  .-----------. | |
+                   | | |  .-.     | | |
+                   | | | (   )    | | |
+                   | | |  `-'     | | |
+                   | | '-----------' | |
+                   | '___________________' |
+                   |_______________________|
+                         ||        ||
+                         ||        ||
+                        _||________||_
+    """
+    print(art)
+
+def tampilkan_ascii_koridor():
+    """ASCII art koridor gelap"""
+    art = """
+        ╔════════════════════════════════════════════╗
+        ║ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ║
+        ║ ░░┌─────────────────────────────────┐░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░│  .                         .    │░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░│      .                    .     │░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░│         .              .        │░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░│                                 │░░░ ║
+        ║ ░░└─────────────────────────────────┘░░░ ║
+        ║ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ║
+        ╚════════════════════════════════════════════╝
+              Lampu berkedip... Suara bergema...
+    """
+    print(art)
+
+def tampilkan_ascii_monster():
+    """ASCII art monster"""
+    art = """
+                      _.--'''''--.._
+                  .-'            `-..
+                ,'                   `.
+              ,'                       `.
+            ,'    .-''-._    _.-''-._    `.
+          ,'     (       \\  /       )     `.
+         /       |   @    \\/    @   |       \\
+        ;        \\   ___        ___/        ;
+        |         `._  __`\\  /'__ _.`        |
+        |            `'-.   \\/  .-'`         |
+        ;               | _.._. |            ;
+         \\             ,'      `.          /
+          `.          /          \\        ,'
+            `.       ;            ;     ,'
+              `.     |            |   ,'
+                `.   |            | ,'
+                  `. \\            /,'
+                    `.'-.______.-''
+                    
+           ⚠️  SOMETHING IS WATCHING...  ⚠️
+    """
+    print(art)
+
+def tampilkan_ascii_skull():
+    """ASCII art tengkorak untuk ending buruk"""
+    art = """
+                    ___
+                 .-'   `-.
+                /         \\
+                |  O   O  |
+                |    ^    |
+                |  \___/  |
+                 \       /
+                  `-----'
+                  
+            💀 GAME OVER 💀
+    """
+    print(art)
+
+def tampilkan_ascii_escape():
+    """ASCII art pelarian"""
+    art = """
+                    _______________
+                   /               \\
+                  /    FREEDOM!     \\
+                 /    _________      \\
+                /    |         |      \\
+               /     |  EXIT   |       \\
+              /      |_________|        \\
+             /__________________________ \\
+                       |     |
+                       |     |
+                    ___|     |___
+    """
+    print(art)
+
+def tampilkan_ascii_ritual():
+    """ASCII art ruang ritual"""
+    art = """
+            ⭐                                    ⭐
+               ╔══════════════════════════╗
+               ║  🕯️                  🕯️  ║
+               ║     _______________     ║
+               ║    /               \    ║
+               ║   |    ☠️  ☠️  ☠️    |   ║
+               ║   |                 |   ║
+               ║   |   THE ALTAR    |   ║
+               ║   |_________________|   ║
+               ║  🕯️                  🕯️  ║
+               ╚══════════════════════════╝
+            ⭐                                    ⭐
+         
+           Dark energy emanates from this place...
+    """
+    print(art)
+
+def tampilkan_ascii_laboratorium():
+    """ASCII art laboratorium"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║     LABORATORIUM EKSPERIMEN            ║
+        ║                                        ║
+        ║    🧪    💉    🔬    ⚗️    💊           ║
+        ║  ___________________________________   ║
+        ║ |   _____________________________  |  ║
+        ║ |  |                             | |  ║
+        ║ |  |  ▓▓▓▓  Meja Bedah  ▓▓▓▓     | |  ║
+        ║ |  |_____________________________|  |  ║
+        ║ |___________________________________|  ║
+        ║                                        ║
+        ║  🩸 Noda darah di mana-mana... 🩸      ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_perpustakaan():
+    """ASCII art perpustakaan"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║         📚 PERPUSTAKAAN TUA 📚         ║
+        ║                                        ║
+        ║   ║║║║   ║║║║   ║║║║   ║║║║   ║║║║   ║
+        ║   ║║║║   ║║║║   ║║║║   ║║║║   ║║║║   ║
+        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
+        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
+        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
+        ║                                        ║
+        ║      Buku-buku tua berdebu...          ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_kamar_mayat():
+    """ASCII art kamar mayat"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║          ⚰️  KAMAR MAYAT  ⚰️            ║
+        ║                                        ║
+        ║   ┌─────────┐  ┌─────────┐            ║
+        ║   │  LACI 1 │  │  LACI 2 │            ║
+        ║   └─────────┘  └─────────┘            ║
+        ║   ┌─────────┐  ┌─────────┐            ║
+        ║   │  LACI 3 │  │  LACI 4 │            ║
+        ║   └─────────┘  └─────────┘            ║
+        ║   ┌─────────┐  ┌─────────┐            ║
+        ║   │  LACI 5 │  │  LACI 6 │            ║
+        ║   └─────────┘  └─────────┘            ║
+        ║                                        ║
+        ║    Udara dingin dan berbau busuk...    ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_ruang_rawat():
+    """ASCII art ruang rawat inap"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║       🏥 RUANG RAWAT INAP 🏥           ║
+        ║                                        ║
+        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
+        ║   │ BED1 │  │ BED2 │  │ BED3 │        ║
+        ║   │▓▓▓▓▓▓│  │▓▓▓▓▓▓│  │▓▓▓▓▓▓│        ║
+        ║   └──────┘  └──────┘  └──────┘        ║
+        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
+        ║   │ BED4 │  │ BED5 │  │ BED6 │        ║
+        ║   │▓▓▓▓▓▓│  │▓▓▓▓▓▓│  │▓▓▓▓▓▓│        ║
+        ║   └──────┘  └──────┘  └──────┘        ║
+        ║                                        ║
+        ║   Guratan kuku di dinding... 😨        ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_tangga_basement():
+    """ASCII art tangga ke basement"""
+    art = """
+              ╔═══════════════════════╗
+              ║   TANGGA KE BAWAH     ║
+              ╚═══════════════════════╝
+                      \\    /
+                       \\  /
+                        \\/
+                        ||
+                        ||
+                        ||
+                        ||
+                       /  \\
+                      /    \\
+                     /      \\
+                    /        \\
+                   /          \\
+                  ▓▓▓▓▓▓▓▓▓▓▓▓
+                      ⬇️⬇️⬇️
+              [BASEMENT - DARKNESS BELOW]
+    """
+    print(art)
+
+def tampilkan_ascii_lobby():
+    """ASCII art lobby"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║           🏛️  LOBBY  🏛️                 ║
+        ║                                        ║
+        ║        ┌──────────────────┐            ║
+        ║        │    RECEPTION     │            ║
+        ║        │   ▓▓▓▓▓▓▓▓▓▓▓▓   │            ║
+        ║        └──────────────────┘            ║
+        ║                                        ║
+        ║   📋                          🚪        ║
+        ║                                        ║
+        ║        [ABANDONED SINCE 1963]          ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_keamanan():
+    """ASCII art ruang keamanan"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║       🔒 RUANG KEAMANAN 🔒             ║
+        ║                                        ║
+        ║   📹  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  📹        ║
+        ║   ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️        ║
+        ║        [MONITOR CCTV MATI]             ║
+        ║                                        ║
+        ║   ┌────────────────────────┐           ║
+        ║   │  🗄️  LACI-LACI  🗄️     │           ║
+        ║   └────────────────────────┘           ║
+        ║                                        ║
+        ║      Mungkin ada yang berguna...       ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
+def tampilkan_ascii_kantor():
+    """ASCII art kantor administratif"""
+    art = """
+        ╔════════════════════════════════════════╗
+        ║       📁 KANTOR ADMINISTRATIF 📁       ║
+        ║                                        ║
+        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
+        ║   │ DESK │  │ DESK │  │ DESK │        ║
+        ║   │ 📄📄  │  │ 📄📄  │  │ 📄📄  │        ║
+        ║   └──────┘  └──────┘  └──────┘        ║
+        ║                                        ║
+        ║   ┌────────────────────┐               ║
+        ║   │  LEMARI ARSIP 🗄️   │               ║
+        ║   │   [FILE CABINET]   │               ║
+        ║   └────────────────────┘               ║
+        ║                                        ║
+        ║     Dokumen berserakan...              ║
+        ╚════════════════════════════════════════╝
+    """
+    print(art)
+
 def cetak_judul():
     """Menampilkan judul game"""
-    print("\n" + "="*70)
-    print("                     ASYLUM NIGHTMARE                     ")
-    print("              The Blackwood Psychiatric Hospital              ")
-    print("                 Advanced Horror Experience                 ")
-    print("="*70 + "\n")
+    tampilkan_ascii_judul()
     time.sleep(1)
 
 def pilih(pilihan_list, tampilkan_inventory=True):
@@ -96,6 +422,7 @@ def pilih(pilihan_list, tampilkan_inventory=True):
 
 def ending_gila():
     """Ending - Kehilangan kewarasan"""
+    tampilkan_ascii_skull()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("🌀🌀🌀 ENDING: KEGILAAN 🌀🌀🌀")
     cetak_lambat("="*70)
@@ -112,6 +439,7 @@ def ending_gila():
 
 def ending_terkutuk():
     """Ending - Terkutuk selamanya"""
+    tampilkan_ascii_skull()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("👻👻👻 ENDING: TERKUTUK 👻👻👻")
     cetak_lambat("="*70)
@@ -127,6 +455,7 @@ def ending_terkutuk():
 
 def ending_dimakan():
     """Ending - Dimakan oleh monster"""
+    tampilkan_ascii_monster()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("🩸🩸🩸 ENDING: MANGSA 🩸🩸🩸")
     cetak_lambat("="*70)
@@ -143,6 +472,7 @@ def ending_dimakan():
 
 def ending_selamat_biasa():
     """Ending - Selamat tapi trauma"""
+    tampilkan_ascii_escape()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("🏃🏃🏃 ENDING: PELARIAN 🏃🏃🏃")
     cetak_lambat("="*70)
@@ -159,6 +489,12 @@ def ending_selamat_biasa():
 
 def ending_selamat_pahlawan():
     """Ending terbaik - Selamat dan mengakhiri kutukan"""
+    tampilkan_ascii_escape()
+    cetak_cepat("""
+           ⭐        ⭐        ⭐
+              YOU DID IT!
+           ⭐        ⭐        ⭐
+    """)
     cetak_lambat("\n" + "="*70)
     cetak_lambat("⭐⭐⭐ ENDING: SANG PEMBEBAS ⭐⭐⭐")
     cetak_lambat("="*70)
@@ -179,6 +515,7 @@ def ending_selamat_pahlawan():
 
 def ending_jadi_monster():
     """Ending terburuk - Berubah jadi monster"""
+    tampilkan_ascii_monster()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("🐺🐺🐺 ENDING: TRANSFORMASI 🐺🐺🐺")
     cetak_lambat("="*70)
@@ -197,6 +534,7 @@ def ending_jadi_monster():
 
 def ending_terjebak_loop():
     """Ending - Terjebak dalam time loop"""
+    tampilkan_ascii_skull()
     cetak_lambat("\n" + "="*70)
     cetak_lambat("🔄🔄🔄 ENDING: INFINITE LOOP 🔄🔄🔄")
     cetak_lambat("="*70)
@@ -219,6 +557,7 @@ def ending_terjebak_loop():
 
 def scene_ritual_room_final():
     """Scene final ritual room - kunci untuk ending terbaik"""
+    tampilkan_ascii_ritual()
     cetak_lambat("\n━━━ RUANG RITUAL - THE HEART OF DARKNESS ━━━")
     cetak_lambat("\nAnda memasuki ruangan bundar besar dengan simbol-simbol aneh di dinding.")
     cetak_lambat("Di tengah ruangan ada altar dengan tengkorak manusia dan lilin-lilin hitam.")
@@ -297,6 +636,7 @@ def scene_ritual_room_final():
 
 def scene_escape_final():
     """Scene pelarian akhir"""
+    tampilkan_ascii_koridor()
     cetak_lambat("\n━━━ PELARIAN TERAKHIR ━━━")
     cetak_lambat("\nAnda harus keluar dari gedung ini SEKARANG!")
     cetak_lambat("Anda mendengar suara mengerikan semakin mendekat...")
@@ -340,6 +680,7 @@ def scene_escape_final():
 
 def scene_laboratory():
     """Scene laboratorium"""
+    tampilkan_ascii_laboratorium()
     cetak_lambat("\n━━━ LABORATORIUM EKSPERIMEN ━━━")
     cetak_lambat("\nAnda memasuki laboratorium yang berantakan.")
     cetak_lambat("Ada meja bedah dengan noda darah tua...")
@@ -395,6 +736,7 @@ def scene_laboratory():
 
 def scene_morgue():
     """Scene kamar mayat"""
+    tampilkan_ascii_kamar_mayat()
     cetak_lambat("\n━━━ KAMAR MAYAT ━━━")
     cetak_lambat("\nRuangan dingin dengan deretan laci logam di dinding...")
     cetak_lambat("Bau pembusukan sangat menyengat di sini.")
@@ -446,6 +788,7 @@ def scene_morgue():
 
 def scene_library():
     """Scene perpustakaan"""
+    tampilkan_ascii_perpustakaan()
     cetak_lambat("\n━━━ PERPUSTAKAAN TUA ━━━")
     cetak_lambat("\nRak-rak buku tinggi menjulang di ruangan besar ini.")
     cetak_lambat("Buku-buku medis dan jurnal-jurnal tua berdebu...")
@@ -516,6 +859,7 @@ def scene_library():
 
 def scene_basement_entrance():
     """Scene pintu masuk basement"""
+    tampilkan_ascii_tangga_basement()
     cetak_lambat("\n━━━ TANGGA MENUJU BASEMENT ━━━")
     cetak_lambat("\nTangga spiral gelap menuju kegelapan di bawah...")
     cetak_lambat("Udara semakin dingin setiap langkah Anda turun...")
@@ -551,6 +895,7 @@ def scene_basement_entrance():
 
 def scene_patient_ward():
     """Scene ruang rawat pasien"""
+    tampilkan_ascii_ruang_rawat()
     cetak_lambat("\n━━━ RUANG RAWAT INAP ━━━")
     cetak_lambat("\nDeretan tempat tidur berkarat dengan kasur compang-camping...")
     cetak_lambat("Beberapa tempat tidur masih ada bekas penggunaan...")
@@ -583,6 +928,7 @@ def scene_patient_ward():
         if pilihan2 == 1:
             cetak_lambat("\nAnda menepuk bahu sosok itu...")
             cetak_lambat("Dia berbalik...")
+            tampilkan_ascii_monster()
             cetak_lambat("WAJAHNYA TIDAK ADA!")
             player.kurang_sanity(25)
             if player.sanity <= 0:
@@ -594,6 +940,7 @@ def scene_patient_ward():
             cetak_lambat("\n'Halo? Apa Anda butuh bantuan?'")
             cetak_lambat("Sosok itu berhenti menangis...")
             cetak_lambat("Perlahan berbalik...")
+            tampilkan_ascii_monster()
             cetak_lambat("ITU BUKAN MANUSIA!")
             player.kurang_sanity(30)
             player.sudah_bertemu_monster = True
@@ -629,6 +976,7 @@ def scene_patient_ward():
 
 def scene_second_floor_corridor():
     """Scene koridor lantai 2"""
+    tampilkan_ascii_koridor()
     cetak_lambat("\n━━━ KORIDOR LANTAI 2 ━━━")
     cetak_lambat("\nKoridor panjang dengan cat yang mengelupas...")
     cetak_lambat("Lampu-lampu berkedip-kedip...")
@@ -665,6 +1013,7 @@ def scene_second_floor_corridor():
 
 def scene_security_room():
     """Scene ruang keamanan"""
+    tampilkan_ascii_keamanan()
     cetak_lambat("\n━━━ RUANG KEAMANAN ━━━")
     cetak_lambat("\nRuang kecil dengan monitor CCTV yang sudah mati...")
     cetak_lambat("Ada meja dengan laci-laci...")
@@ -695,6 +1044,7 @@ def scene_security_room():
 
 def scene_office():
     """Scene kantor administratif"""
+    tampilkan_ascii_kantor()
     cetak_lambat("\n━━━ KANTOR ADMINISTRATIF ━━━")
     cetak_lambat("\nMeja-meja kerja dengan dokumen berserakan...")
     cetak_lambat("Ada lemari arsip besar di pojok ruangan.")
@@ -735,6 +1085,7 @@ def scene_office():
 
 def scene_first_floor_main():
     """Scene utama lantai 1"""
+    tampilkan_ascii_lobby()
     cetak_lambat("\n━━━ LOBBY LANTAI 1 ━━━")
     cetak_lambat("\nLobby besar dengan meja resepsionis yang ditinggalkan...")
     
@@ -793,6 +1144,7 @@ def scene_first_floor_main():
 
 def scene_entrance():
     """Scene pertama - pintu masuk"""
+    tampilkan_ascii_gedung()
     cetak_lambat("\n━━━ PINTU MASUK BLACKWOOD ASYLUM ━━━")
     cetak_lambat("\nAnda berdiri di depan pintu besar rumah sakit jiwa terbengkalai.")
     cetak_lambat("Gedung megah namun suram ini sudah ditinggalkan sejak tahun 1963.")
@@ -810,6 +1162,7 @@ def scene_entrance():
     ], tampilkan_inventory=False)
     
     if pilihan == 1:
+        tampilkan_ascii_pintu()
         cetak_lambat("\nAnda mengumpulkan keberanian dan mendorong pintu...")
         cetak_lambat("KREEEK... Pintu terbuka dengan suara mengerikan.")
         cetak_lambat("Anda melangkah masuk ke dalam kegelapan...")
