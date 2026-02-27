@@ -8,6 +8,29 @@ Game horor kompleks dengan multiple paths, inventory system, dan sanity meter
 import time
 import sys
 import random
+import webbrowser
+
+AUTO_BUKA_GAMBAR = False
+GAMBAR_SUDAH_DIBUKA = set()
+
+UNSPLASH_SCENES = {
+    "judul": "https://source.unsplash.com/1600x900/?horror,asylum,dark",
+    "gedung": "https://source.unsplash.com/1600x900/?abandoned,hospital,night",
+    "pintu": "https://source.unsplash.com/1600x900/?old,door,creepy",
+    "koridor": "https://source.unsplash.com/1600x900/?dark,hallway,hospital",
+    "monster": "https://source.unsplash.com/1600x900/?horror,shadow,creature",
+    "skull": "https://source.unsplash.com/1600x900/?skull,dark,macabre",
+    "escape": "https://source.unsplash.com/1600x900/?escape,night,forest",
+    "ritual": "https://source.unsplash.com/1600x900/?ritual,candle,occult",
+    "laboratorium": "https://source.unsplash.com/1600x900/?laboratory,abandoned,medical",
+    "perpustakaan": "https://source.unsplash.com/1600x900/?old,library,dark",
+    "kamar_mayat": "https://source.unsplash.com/1600x900/?morgue,hospital,cold",
+    "ruang_rawat": "https://source.unsplash.com/1600x900/?hospital,ward,abandoned",
+    "tangga_basement": "https://source.unsplash.com/1600x900/?basement,stairs,dark",
+    "lobby": "https://source.unsplash.com/1600x900/?abandoned,lobby,building",
+    "keamanan": "https://source.unsplash.com/1600x900/?security,monitor,room",
+    "kantor": "https://source.unsplash.com/1600x900/?old,office,documents",
+}
 
 class Player:
     """Class untuk menyimpan status pemain"""
@@ -61,335 +84,86 @@ def tampilkan_status():
         print(f"📦 Inventory: {', '.join(player.inventory)}")
     print("="*50)
 
+def tampilkan_gambar_unsplash(scene_key, judul_scene):
+    """Menampilkan link gambar Unsplash untuk scene tertentu."""
+    url = UNSPLASH_SCENES.get(scene_key, "https://source.unsplash.com/1600x900/?horror,dark")
+    print("\n" + "=" * 70)
+    print(f"🖼️  {judul_scene}")
+    print(f"🔗 Unsplash: {url}")
+    print("=" * 70)
+
+    if AUTO_BUKA_GAMBAR and scene_key not in GAMBAR_SUDAH_DIBUKA:
+        try:
+            webbrowser.open(url, new=2)
+            GAMBAR_SUDAH_DIBUKA.add(scene_key)
+        except Exception:
+            print("⚠️  Gagal membuka browser otomatis. Buka link secara manual.")
+
 def tampilkan_ascii_judul():
-    """ASCII art judul game"""
-    art = """
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║     ▄▀█ █▀ █▄█ █░░ █░█ █▀▄▀█   █▄░█ █ █▀▀ █░█ ▀█▀ █▀▄▀█ ▄▀█ █▀█ █▀▀  ║
-║     █▀█ ▄█ ░█░ █▄▄ █▄█ █░▀░█   █░▀█ █ █▄█ █▀█ ░█░ █░▀░█ █▀█ █▀▄ ██▄  ║
-║                                                                      ║
-║            ⚰️  THE BLACKWOOD PSYCHIATRIC HOSPITAL  ⚰️                ║
-║                  ~ Advanced Horror Experience ~                      ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar judul game"""
+    tampilkan_gambar_unsplash("judul", "THE BLACKWOOD PSYCHIATRIC HOSPITAL")
     time.sleep(1)
 
 def tampilkan_ascii_gedung():
-    """ASCII art gedung rumah sakit"""
-    art = """
-                                  ___
-                              .-'   `'.
-                             /         \\
-                             |         ;
-                             |         |           ___.--,
-                    _.._     |0) ~ (0) |    _.---'`__.-( (_.
-             __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
-            ( ,.--'`   ',__ /./;   ;, '.__.'
-            _`) )  .---.__.' / |   |\   \\
-           `---' .'.''-._.-'`_./  /\ '.  \\
-                 | |  .' _.-' |  |  \  \  \\
-                  \ \/ .'     \  \   '. '-._)
-                   \/ /        \  \    `=.__`'-.
-                   / /\         `) )    / / `"".\\
-             , _.-'.'\ \        / /    ( (     / /
-              `--'`   ) )    .-'.'      '.'.  | (
-                     (/`    ( (`          ) )  '-;
-                      `      '-;         (-'
-
-        ═══════════════════════════════════════════════
-           BLACKWOOD ASYLUM - Abandoned Since 1963
-        ═══════════════════════════════════════════════
-    """
-    print(art)
+    """Gambar gedung rumah sakit"""
+    tampilkan_gambar_unsplash("gedung", "BLACKWOOD ASYLUM - Abandoned Since 1963")
     time.sleep(1)
 
 def tampilkan_ascii_pintu():
-    """ASCII art pintu masuk"""
-    art = """
-                    ___________________________
-                   |  ___________________  |
-                   | |                   | |
-                   | |   RESTRICTED      | |
-                   | |                   | |
-                   | |   DO NOT ENTER    | |
-                   | |                   | |
-                   | |___________________| |
-                   |  ___________________  |
-                   | |  .-----------. | |
-                   | | |  .-.     | | |
-                   | | | (   )    | | |
-                   | | |  `-'     | | |
-                   | | '-----------' | |
-                   | '___________________' |
-                   |_______________________|
-                         ||        ||
-                         ||        ||
-                        _||________||_
-    """
-    print(art)
+    """Gambar pintu masuk"""
+    tampilkan_gambar_unsplash("pintu", "Pintu Masuk - Restricted Area")
 
 def tampilkan_ascii_koridor():
-    """ASCII art koridor gelap"""
-    art = """
-        ╔════════════════════════════════════════════╗
-        ║ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ║
-        ║ ░░┌─────────────────────────────────┐░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░│  .                         .    │░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░│      .                    .     │░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░│         .              .        │░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░│                                 │░░░ ║
-        ║ ░░└─────────────────────────────────┘░░░ ║
-        ║ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ║
-        ╚════════════════════════════════════════════╝
-              Lampu berkedip... Suara bergema...
-    """
-    print(art)
+    """Gambar koridor gelap"""
+    tampilkan_gambar_unsplash("koridor", "Koridor Gelap - Lampu berkedip...")
 
 def tampilkan_ascii_monster():
-    """ASCII art monster"""
-    art = """
-                      _.--'''''--.._
-                  .-'            `-..
-                ,'                   `.
-              ,'                       `.
-            ,'    .-''-._    _.-''-._    `.
-          ,'     (       \\  /       )     `.
-         /       |   @    \\/    @   |       \\
-        ;        \\   ___        ___/        ;
-        |         `._  __`\\  /'__ _.`        |
-        |            `'-.   \\/  .-'`         |
-        ;               | _.._. |            ;
-         \\             ,'      `.          /
-          `.          /          \\        ,'
-            `.       ;            ;     ,'
-              `.     |            |   ,'
-                `.   |            | ,'
-                  `. \\            /,'
-                    `.'-.______.-''
-                    
-           ⚠️  SOMETHING IS WATCHING...  ⚠️
-    """
-    print(art)
+    """Gambar monster"""
+    tampilkan_gambar_unsplash("monster", "SOMETHING IS WATCHING...")
 
 def tampilkan_ascii_skull():
-    """ASCII art tengkorak untuk ending buruk"""
-    art = """
-                    ___
-                 .-'   `-.
-                /         \\
-                |  O   O  |
-                |    ^    |
-                |  \___/  |
-                 \       /
-                  `-----'
-                  
-            💀 GAME OVER 💀
-    """
-    print(art)
+    """Gambar tengkorak untuk ending buruk"""
+    tampilkan_gambar_unsplash("skull", "GAME OVER")
 
 def tampilkan_ascii_escape():
-    """ASCII art pelarian"""
-    art = """
-                    _______________
-                   /               \\
-                  /    FREEDOM!     \\
-                 /    _________      \\
-                /    |         |      \\
-               /     |  EXIT   |       \\
-              /      |_________|        \\
-             /__________________________ \\
-                       |     |
-                       |     |
-                    ___|     |___
-    """
-    print(art)
+    """Gambar pelarian"""
+    tampilkan_gambar_unsplash("escape", "FREEDOM - EXIT")
 
 def tampilkan_ascii_ritual():
-    """ASCII art ruang ritual"""
-    art = """
-            ⭐                                    ⭐
-               ╔══════════════════════════╗
-               ║  🕯️                  🕯️  ║
-               ║     _______________     ║
-               ║    /               \    ║
-               ║   |    ☠️  ☠️  ☠️    |   ║
-               ║   |                 |   ║
-               ║   |   THE ALTAR    |   ║
-               ║   |_________________|   ║
-               ║  🕯️                  🕯️  ║
-               ╚══════════════════════════╝
-            ⭐                                    ⭐
-         
-           Dark energy emanates from this place...
-    """
-    print(art)
+    """Gambar ruang ritual"""
+    tampilkan_gambar_unsplash("ritual", "Ruang Ritual - Dark energy emanates...")
 
 def tampilkan_ascii_laboratorium():
-    """ASCII art laboratorium"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║     LABORATORIUM EKSPERIMEN            ║
-        ║                                        ║
-        ║    🧪    💉    🔬    ⚗️    💊           ║
-        ║  ___________________________________   ║
-        ║ |   _____________________________  |  ║
-        ║ |  |                             | |  ║
-        ║ |  |  ▓▓▓▓  Meja Bedah  ▓▓▓▓     | |  ║
-        ║ |  |_____________________________|  |  ║
-        ║ |___________________________________|  ║
-        ║                                        ║
-        ║  🩸 Noda darah di mana-mana... 🩸      ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar laboratorium"""
+    tampilkan_gambar_unsplash("laboratorium", "Laboratorium Eksperimen")
 
 def tampilkan_ascii_perpustakaan():
-    """ASCII art perpustakaan"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║         📚 PERPUSTAKAAN TUA 📚         ║
-        ║                                        ║
-        ║   ║║║║   ║║║║   ║║║║   ║║║║   ║║║║   ║
-        ║   ║║║║   ║║║║   ║║║║   ║║║║   ║║║║   ║
-        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
-        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
-        ║   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ▓▓▓▓   ║
-        ║                                        ║
-        ║      Buku-buku tua berdebu...          ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar perpustakaan"""
+    tampilkan_gambar_unsplash("perpustakaan", "Perpustakaan Tua")
 
 def tampilkan_ascii_kamar_mayat():
-    """ASCII art kamar mayat"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║          ⚰️  KAMAR MAYAT  ⚰️            ║
-        ║                                        ║
-        ║   ┌─────────┐  ┌─────────┐            ║
-        ║   │  LACI 1 │  │  LACI 2 │            ║
-        ║   └─────────┘  └─────────┘            ║
-        ║   ┌─────────┐  ┌─────────┐            ║
-        ║   │  LACI 3 │  │  LACI 4 │            ║
-        ║   └─────────┘  └─────────┘            ║
-        ║   ┌─────────┐  ┌─────────┐            ║
-        ║   │  LACI 5 │  │  LACI 6 │            ║
-        ║   └─────────┘  └─────────┘            ║
-        ║                                        ║
-        ║    Udara dingin dan berbau busuk...    ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar kamar mayat"""
+    tampilkan_gambar_unsplash("kamar_mayat", "Kamar Mayat")
 
 def tampilkan_ascii_ruang_rawat():
-    """ASCII art ruang rawat inap"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║       🏥 RUANG RAWAT INAP 🏥           ║
-        ║                                        ║
-        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
-        ║   │ BED1 │  │ BED2 │  │ BED3 │        ║
-        ║   │▓▓▓▓▓▓│  │▓▓▓▓▓▓│  │▓▓▓▓▓▓│        ║
-        ║   └──────┘  └──────┘  └──────┘        ║
-        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
-        ║   │ BED4 │  │ BED5 │  │ BED6 │        ║
-        ║   │▓▓▓▓▓▓│  │▓▓▓▓▓▓│  │▓▓▓▓▓▓│        ║
-        ║   └──────┘  └──────┘  └──────┘        ║
-        ║                                        ║
-        ║   Guratan kuku di dinding... 😨        ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar ruang rawat inap"""
+    tampilkan_gambar_unsplash("ruang_rawat", "Ruang Rawat Inap")
 
 def tampilkan_ascii_tangga_basement():
-    """ASCII art tangga ke basement"""
-    art = """
-              ╔═══════════════════════╗
-              ║   TANGGA KE BAWAH     ║
-              ╚═══════════════════════╝
-                      \\    /
-                       \\  /
-                        \\/
-                        ||
-                        ||
-                        ||
-                        ||
-                       /  \\
-                      /    \\
-                     /      \\
-                    /        \\
-                   /          \\
-                  ▓▓▓▓▓▓▓▓▓▓▓▓
-                      ⬇️⬇️⬇️
-              [BASEMENT - DARKNESS BELOW]
-    """
-    print(art)
+    """Gambar tangga ke basement"""
+    tampilkan_gambar_unsplash("tangga_basement", "Tangga ke Basement")
 
 def tampilkan_ascii_lobby():
-    """ASCII art lobby"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║           🏛️  LOBBY  🏛️                 ║
-        ║                                        ║
-        ║        ┌──────────────────┐            ║
-        ║        │    RECEPTION     │            ║
-        ║        │   ▓▓▓▓▓▓▓▓▓▓▓▓   │            ║
-        ║        └──────────────────┘            ║
-        ║                                        ║
-        ║   📋                          🚪        ║
-        ║                                        ║
-        ║        [ABANDONED SINCE 1963]          ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar lobby"""
+    tampilkan_gambar_unsplash("lobby", "Lobby Lantai 1")
 
 def tampilkan_ascii_keamanan():
-    """ASCII art ruang keamanan"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║       🔒 RUANG KEAMANAN 🔒             ║
-        ║                                        ║
-        ║   📹  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  📹        ║
-        ║   ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️  ◻️        ║
-        ║        [MONITOR CCTV MATI]             ║
-        ║                                        ║
-        ║   ┌────────────────────────┐           ║
-        ║   │  🗄️  LACI-LACI  🗄️     │           ║
-        ║   └────────────────────────┘           ║
-        ║                                        ║
-        ║      Mungkin ada yang berguna...       ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar ruang keamanan"""
+    tampilkan_gambar_unsplash("keamanan", "Ruang Keamanan")
 
 def tampilkan_ascii_kantor():
-    """ASCII art kantor administratif"""
-    art = """
-        ╔════════════════════════════════════════╗
-        ║       📁 KANTOR ADMINISTRATIF 📁       ║
-        ║                                        ║
-        ║   ┌──────┐  ┌──────┐  ┌──────┐        ║
-        ║   │ DESK │  │ DESK │  │ DESK │        ║
-        ║   │ 📄📄  │  │ 📄📄  │  │ 📄📄  │        ║
-        ║   └──────┘  └──────┘  └──────┘        ║
-        ║                                        ║
-        ║   ┌────────────────────┐               ║
-        ║   │  LEMARI ARSIP 🗄️   │               ║
-        ║   │   [FILE CABINET]   │               ║
-        ║   └────────────────────┘               ║
-        ║                                        ║
-        ║     Dokumen berserakan...              ║
-        ╚════════════════════════════════════════╝
-    """
-    print(art)
+    """Gambar kantor administratif"""
+    tampilkan_gambar_unsplash("kantor", "Kantor Administratif")
 
 def cetak_judul():
     """Menampilkan judul game"""
@@ -1259,7 +1033,7 @@ def intro_story():
 
 def main():
     """Fungsi utama game"""
-    global player
+    global player, AUTO_BUKA_GAMBAR, GAMBAR_SUDAH_DIBUKA
     
     cetak_judul()
     
@@ -1275,6 +1049,14 @@ def main():
         cetak_lambat("\nKeputusan yang bijak...")
         cetak_lambat("Beberapa pintu lebih baik tetap ditutup.")
         return
+
+    mode_gambar = input("\nBuka gambar Unsplash otomatis di browser? (y/n, default n): ").strip().lower()
+    AUTO_BUKA_GAMBAR = mode_gambar == 'y'
+    GAMBAR_SUDAH_DIBUKA = set()
+    if AUTO_BUKA_GAMBAR:
+        cetak_lambat("Mode gambar aktif: browser akan membuka gambar saat scene pertama kali muncul.")
+    else:
+        cetak_lambat("Mode gambar manual: link Unsplash akan ditampilkan di terminal.")
     
     print("\n" * 2)
     intro_story()

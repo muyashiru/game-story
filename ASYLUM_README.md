@@ -12,6 +12,7 @@ Game horor interaktif berbasis teks yang kompleks dengan sistem inventory, sanit
 - **Sanity System**: Kewarasan Anda berkurang seiring pengalaman mengerikan
 - **Inventory Management**: Kumpulkan dan gunakan item strategis (maksimal 5 item)
 - **Multiple Branching Paths**: Lebih dari 15 scene berbeda dengan pilihan kompleks
+- **Visual Scene via Unsplash**: Setiap scene menampilkan link gambar atmosferik dari Unsplash
 - **Item Dependencies**: Beberapa aksi memerlukan item khusus
 - **Hidden Secrets**: Temukan rahasia gelap Blackwood Asylum
 - **Monster Encounters**: Hadapi makhluk supernatural yang berbahaya
@@ -161,7 +162,7 @@ Dr. Blackwood tidak mati... dia berubah. Bersama pasien-pasiennya, mereka terjeb
 ## 🔧 Technical Details
 
 - **Language**: Python 3.6+
-- **Dependencies**: Standard library only (sys, time, random)
+- **Dependencies**: Standard library only (sys, time, random, webbrowser)
 - **Platform**: Cross-platform (Windows, Linux, macOS)
 - **Lines of Code**: 800+ lines
 - **Playtime**: 20-45 menit (tergantung eksplorasi)
